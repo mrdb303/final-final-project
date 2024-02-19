@@ -4,7 +4,7 @@ import React from 'react';
 import { styled, keyframes } from '@stitches/react';
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import { CaretDownIcon } from '@radix-ui/react-icons';
-import { purple, blackA, gray } from '@radix-ui/colors';
+import { blackA, gray } from '@radix-ui/colors';
 
 
 const enterFromRight = keyframes({
@@ -62,11 +62,11 @@ const StyledList = styled(NavigationMenuPrimitive.List, {
   all: 'unset',
   display: 'flex',
   justifyContent: 'center',
-  backgroundColor: '#ECD9FA',
+  backgroundColor: 'black',
   padding: 4,
   borderRadius: 6,
   listStyle: 'none',
-  boxShadow: `0 2px 10px ${blackA.blackA7}`,
+  boxShadow: `0 2px 10px ${blackA.blackA10}`,
 });
 
 const itemStyles = {
@@ -77,9 +77,9 @@ const itemStyles = {
   lineHeight: 1,
   borderRadius: 4,
   fontSize: 15,
-  color: purple.purple12,
-  '&:focus': { position: 'relative', boxShadow: `0 0 0 2px ${purple.purple7}` },
-  '&:hover': { backgroundColor: purple.purple6 },
+  color: 'white',
+  '&:focus': { position: 'relative', boxShadow: `0 0 0 2px ${blackA.blackA7}` },
+  '&:hover': { backgroundColor: blackA.blackA6 },
 };
 
 const StyledTrigger = styled(NavigationMenuPrimitive.Trigger, {
@@ -93,7 +93,7 @@ const StyledTrigger = styled(NavigationMenuPrimitive.Trigger, {
 
 const StyledCaret = styled(CaretDownIcon, {
   position: 'relative',
-  color: purple.purple10,
+  color: 'white',
   top: 1,
   '[data-state=open] &': { transform: 'rotate(-180deg)' },
   '@media (prefers-reduced-motion: no-preference)': {
@@ -151,7 +151,7 @@ const StyledIndicator = styled(NavigationMenuPrimitive.Indicator, {
 const StyledArrow = styled('div', {
   position: 'relative',
   top: '70%',
-  backgroundColor: '#ECD9FA',
+  backgroundColor: 'black',
   width: 15,
   height: 15,
   transform: 'rotate(45deg)',
@@ -169,7 +169,7 @@ const StyledViewport = styled(NavigationMenuPrimitive.Viewport, {
   transformOrigin: 'top center',
   marginTop: 10,
   width: '100%',
-  backgroundColor: '#ECD9FA',
+  backgroundColor: 'black',
   borderRadius: 6,
   overflow: 'hidden',
   boxShadow: 'hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px',
@@ -247,12 +247,12 @@ const LinkTitle = styled('div', {
   fontWeight: 500,
   lineHeight: 1.2,
   marginBottom: 5,
-  color: purple.purple12,
+  color: 'white',
 });
 
 const LinkText = styled('p', {
   all: 'unset',
-  color: purple.purple11,
+  color: 'white',
   lineHeight: 1.4,
   fontWeight: 'initial',
 });
@@ -265,7 +265,7 @@ const ContentListItem = React.forwardRef(({ children, title, ...props }, forward
       css={{
         padding: 12,
         borderRadius: 6,
-        '&:hover': { backgroundColor: purple.purple6 },
+        '&:hover': { backgroundColor: blackA.blackA12 },
       }}
     >
       <LinkTitle>{title}</LinkTitle>
@@ -305,7 +305,7 @@ const ContentListItemCallout = React.forwardRef(({ children, ...props }, forward
       <LinkText
         css={{
           fontSize: 14,
-          color: gray.gray4,
+          color: 'white',
           lineHeight: 1.3,
         }}
       >
@@ -373,26 +373,6 @@ export const NavigationMenuDemo = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
 
-
-
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Your Profile</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ContentList layout="three">
-              <ContentListItem 
-                title="Butcher&apos;s surprise" href="/pages/butchers">
-                Whatever cuts and shavings are left over.
-              </ContentListItem>
-              <ContentListItem
-                title="The big cheese" href="/pages/cheese">
-                Not as big as it was since product shrinkflation.
-              </ContentListItem>
-              <ContentListItem title="Party pie" href="/pages/party">
-                Tastes of cardboard, but people are too drunk to notice.
-              </ContentListItem>
-            </ContentList>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
 
         <NavigationMenuItem>
           <NavigationMenuTrigger>Worldwide Delivery</NavigationMenuTrigger>
